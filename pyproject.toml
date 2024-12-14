@@ -1,0 +1,32 @@
+[tool.poetry]
+name = "beyond-stars"
+version = "0.1.0"
+description = "Beyond Stars is an e-commerce platform dedicated to bringing the wonders of the cosmos to everyone. We specialize in astronomy-related products, including high-quality telescopes, stargazing accessories, books, and gifts for space enthusiasts. Our mission is to make exploring the universe accessible and inspiring for all."
+authors = ["Isaias-tech <isaias-santiago-toribio@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+flask = "^3.1.0"
+flask-sqlalchemy = "^3.1.1"
+flask-marshmallow = "^1.2.1"
+flask-migrate = "^4.0.7"
+flask-bcrypt = "^1.0.1"
+boto3 = "^1.35.80"
+python-dotenv = "^1.0.1"
+marshmallow-sqlalchemy = "^1.1.0"
+flask-wtf = "^1.2.2"
+email-validator = "^2.2.0"
+flask-login = "^0.6.3"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^24.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.black]
+line-length = 120

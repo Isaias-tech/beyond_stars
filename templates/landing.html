@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Home - {{ app_name }}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock title %}
+
+{% block content %}
+<header>
+    <nav>
+        <div class="brand">
+            <a href="#"><h1>{{app_name}}</h1></a>
+        </div>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <div class="actions">
+                <a href="/auth/register">Register</a>
+                <a href="/auth/login">Login</a>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="home" style="background-image: url('{{ url_for('static', filename='media/galaxy-1.png') }}');">
+        <h2>Welcome to {{ app_name }}</h2>
+        <p>Your one-stop shop for astronomy-related products!</p>
+        <img src="{{url_for('static', filename='media/logo.png')}}" alt="beyond-stars-logo" >
+        <a href="/products" class="cta-button">Shop Now</a>
+    </section>
+    
+    <section id="about">
+        <h2>About Us</h2>
+        <p>{{ app_name }} is dedicated to bringing the wonders of the cosmos to everyone. We offer high-quality telescopes, accessories, and gifts for astronomy enthusiasts.</p>
+        <p>Our mission is to make stargazing accessible and enjoyable for beginners and experts alike. Founded by passionate astronomers, we believe the night sky is for everyone to explore.</p>
+    </section>
+    
+    <section id="products">
+        <h2>Our Products</h2>
+        <p>Explore our selection of premium telescopes, star maps, and other stargazing essentials.</p>
+        <ul>
+            <li>High-quality telescopes for beginners and professionals.</li>
+            <li>Star maps to guide your celestial journeys.</li>
+            <li>Books and guides for astronomy enthusiasts.</li>
+            <li>Unique gifts for space lovers.</li>
+        </ul>
+    </section>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form method="POST" action="/contact">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+    
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; {{ current_year }} {{ app_name }}. All rights reserved.</p>
+    <ul class="footer-nav">
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+        <li><a href="/sitemap">Sitemap</a></li>
+    </ul>
+</footer>
+{% endblock content %}

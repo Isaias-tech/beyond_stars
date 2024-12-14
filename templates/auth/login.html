@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Login - {{ app_name }}</title>
+<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+{% endblock title %}
+
+{% block content %}
+<main>
+	<section>
+		<a href="/"><h1>{{app_name}}</h1></a>
+		<div class="image-container">
+			<img src="{{url_for('static', filename='media/logo.png')}}" alt="beyond-stars-logo" >
+		</div>
+		<p>The astronomy store where you’ll fine everything you need</p>
+	</section>
+	<section>
+		<h2>Welcome back to {{app_name}}</h2>
+		<form method="POST" action="/auth/login">
+			{{ form.hidden_tag() }}
+			
+			<div>
+				<label for="email">Email:</label>
+				{{ form.email(class="form-control") }}
+				{% if form.email.errors %}
+					<div class="error">
+						{{ form.email.errors[0] }}
+					</div>
+				{% endif %}
+			</div>
+			
+			<div>
+				<label for="password">Password:</label>
+				{{ form.password(class="form-control") }}
+				{% if form.password.errors %}
+					<div class="error">
+						{{ form.password.errors[0] }}
+					</div>
+				{% endif %}
+			</div>
+			{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+					<ul class="flash-messages">
+						{% for category, message in messages %}
+							<li class="{{ category }}">{{ message }}</li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+			<button type="submit">Login</button>
+		</form>
+		<p>No accounnt yet? <a href="/auth/register"><strong>Register now</strong></a></p>
+	</section>
+</main>
+{% endblock %}

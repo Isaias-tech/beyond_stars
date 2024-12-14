@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Space+Grotesk&display=swap');
+
+* {
+	box-sizing : border-box;
+	padding    : 0;
+	margin     : 0;
+	font-family: 'Space Grotesk', 'Times New Roman', Times, sans-serif;
+	font-style : normal;
+}
+
+.flash-messages {
+	list-style: none;
+	padding   : 0;
+}
+
+.flash-messages li {
+	padding      : 10px;
+	margin-bottom: 10px;
+	border-radius: 4px;
+}
+
+.flash-messages .success {
+	background-color: #d4edda;
+	color           : #155724;
+}
+
+.flash-messages .error {
+	background-color: #f8d7da;
+	color           : #721c24;
+}
+
+.flash-messages .info {
+	background-color: #d1ecf1;
+	color           : #0c5460;
+}
