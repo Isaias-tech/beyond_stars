@@ -1,5 +1,10 @@
+header {
+
+    background-color: #3B1F52;
+}
+
 .welcome {
-    color         : white;
+    color         : black;
     font-size     : 30px;
     padding-bottom: 20px;
 }

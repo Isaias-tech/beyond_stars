@@ -145,7 +145,7 @@ main {
 	display         : inline-block;
 	margin-top      : 20px;
 	padding         : 10px 5%;
-	background-color: #dd819c;
+	background-color: #3B1F52;
 	color           : white;
 	border-radius   : 5px;
 	text-decoration : none;
@@ -156,6 +156,25 @@ main {
 	background-color: #b065a1;
 }
 
+.search-bar {
+	width     : 90px;
+	height    : 50px;
+	display   : flex;
+	margin-top: 10px;
+
+}
+
+.search-bar img {
+	width       : 100px;
+	height      : 50px;
+	border-style: none;
+}
+
+.search-bar input {
+	height     : 35px;
+	width      : 500px;
+	padding-top: 10px;
+}
 
 footer {
 	background-color: #02020e;
@@ -194,13 +213,25 @@ footer p {
 /*avail product section design*/
 
 #available-products {
-	width : 1346px;
-	height: 827px;
+	max-width  : 1346px;
+	height     : 827px;
+	text-align : center;
+	padding-top: 10px;
+}
+
+.container-card-products {
+	padding-top   : 10px;
+	padding-bottom: 10px;
+	display       : flex;
+	flex-direction: row;
+	max-width     : 1345px;
+	flex-wrap     : wrap;
+
 }
 
 .card-container {
 	width          : 300px;
-	height         : 403px;
+	height         : 340px;
 	border         : 2px solid;
 	border-radius  : 10px;
 	display        : flex;
@@ -208,6 +239,9 @@ footer p {
 	justify-content: center;
 	align-items    : center;
 	text-align     : center;
+	margin-top     : 10px;
+	margin-left    : 10px;
+	margin-right   : 10px;
 }
 
 .texts {
@@ -231,8 +265,8 @@ footer p {
 }
 
 .img-card-container {
-	width     : 250px;
-	height    : 300px;
+	width     : 200px;
+	height    : 250px;
 	object-fit: contain;
 	border    : 2px solid;
 }

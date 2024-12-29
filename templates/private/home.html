@@ -7,20 +7,166 @@
 {% endblock title %}
 
 {% block content %}
-<main style="background-image: url('{{ url_for('static', filename='media/galaxy-1.png') }}'); height: 100vh;">
-    <div class="brand">
-        <a href="/">
-            <h1>{{app_name}}</h1>
-        </a>v
-    </div>
+<header>
+    <nav>
+        <div class="brand">
+            <a href="#">
+                <h1>{{app_name}}</h1>
+            </a>
+        </div>
+        <div class="search-bar">
+            <img src="{{url_for('static', filename='media/magnifying-glass-searchbar.svg')}}" alt="beyond-stars-logo">
+            <input type="text" placeholder="search...">
+        </div>
+        <ul class="navbar">
+            <div class="profile">
+                <li><a href="/">Your account</a></li>
+            </div>
+            <div class="actions">
+                <a href="/auth/login">Logout</a>
+            </div>
+        </ul>
+    </nav>
+</header>
+
+<main>
     <div class="welcome">
         <p class="welcome">Welcome to Beyond Stars</p>
     </div>
     <div>
         <img src="{{ url_for('static', filename='media/logo.png') }}" </div>
-        <h2>Home</h2>
         {% if current_user.is_authenticated %}
         <a href="{{ url_for('auth.logout') }}">Logout</a>
         {% endif %}
+
+    </div>
+
+    <section id="available-products">
+
+        <h2 class="section-title">Products...</h2>
+
+        <div class="container-card-products">
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </main>
 {% endblock %}
