@@ -3,6 +3,24 @@ header {
     background-color: #3B1F52;
 }
 
+.brand a {
+    display        : flex;
+    justify-content: center;
+    align-items    : center;
+}
+
+.oficial-logo-container {
+    width       : 50px;
+    height      : 50px;
+    object-fit  : contain;
+    margin-right: 10px;
+}
+
+.oficial-logo-container img {
+    width : 100%;
+    height: 100%;
+}
+
 .welcome {
     color         : black;
     font-size     : 30px;
