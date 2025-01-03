@@ -37,9 +37,10 @@
 }
 
 .original-price {
-	margin-right: 7px;
-	margin-left : 7px;
-	color       : red;
+	margin-right   : 7px;
+	margin-left    : 7px;
+	color          : red;
+	text-decoration: line-through;
 }
 
 .price-title {

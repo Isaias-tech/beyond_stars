@@ -12,7 +12,7 @@ Home - {{ app_name }}
 {% block navigation %}
 <ul class="navbar">
     <form class="search-form" action="" method="post">
-        <input type="text" name="search" id="search" placeholder="Search here..." >
+        <input type="text" name="search" id="search" placeholder="Search here...">
         <button type="submit">
             <div class="img-container">
                 <img src="{{ url_for('static', filename='media/icons/search-icon.svg') }}" alt="search-icon">
@@ -32,7 +32,7 @@ Home - {{ app_name }}
     </div>
     <div>
         <div class="img-container">
-            <img src="{{ url_for('static', filename='media/brand/space-man-brand.svg') }}" >
+            <img src="{{ url_for('static', filename='media/brand/space-man-brand.svg') }}">
         </div>
         {% if current_user.is_authenticated %}
         <a href="{{ url_for('auth.logout') }}">Logout</a>
@@ -62,4 +62,35 @@ Home - {{ app_name }}
         </div>
     </section>
 </main>
+
+<div class="container-sidebar">
+
+    <div class="sidebar-menu">
+        <h3 class="filters-title">Filters</h3>
+        <div class="Types-filters">
+            <a class="title" href="">Types</a>
+            <a href="">Refractor</a>
+            <a href="">Reflectors </a>
+            <a href="">Catadioptric</a>
+            <a href="">Dodsoniano Reflector</a>
+            <a href="">Solar telescope</a>
+        </div>
+        <div class="brand-filters">
+            <a class="title" href="">Brands</a>
+            <a href="">Celestron</a>
+            <a href="">skywatcher</a>
+            <a href="">Svbony</a>
+            <a href="">Explore scientific</a>
+            <a href="">Barska</a>
+            <a href="">Zwo</a>
+        </div>
+        <div class="Accesories-filters">
+            <a class="title" href="">Accesories</a>
+            <a href="">Refactor</a>
+            <a href="">Refactor</a>
+            <a href="">Refactor</a>
+        </div>
+    </div>
+
+</div>
 {% endblock %}
