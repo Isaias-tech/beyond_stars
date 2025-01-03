@@ -12,6 +12,10 @@ def set_context():
 
 
 @public_bp.route("/overview")
-@login_required
-def home_page():
+def overview_page():
     return render_template("public/overview.html")
+
+
+@public_bp.route("/checkout")
+def checkout_page():
+    return render_template("public/checkout.html")
