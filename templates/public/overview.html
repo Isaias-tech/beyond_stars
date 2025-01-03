@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home - {{ app_name }}
+{% endblock title %}
+
+{% block statics %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search-bar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/overview.css')}}">
+{% endblock statics %}
+
+{% block navigation %}
+<ul class="navbar">
+    <form class="search-form" action="" method="post">
+        <input type="text" name="search" id="search" placeholder="Search here...">
+        <button type="submit">
+            <div class="img-container">
+                <img src="{{ url_for('static', filename='media/icons/search-icon.svg') }}" alt="search-icon">
+            </div>
+        </button>
+    </form>
+    <div class="actions">
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+    </div>
+</ul>
+{% endblock navigation %}
+
+{% block content %}
+<main>
+    <section class="overview-card-content">
+        <div class="info-card-container">
+            <div class="img-container">
+                <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                    alt="refracting telescope Gskyer">
+            </div>
+
+            <div class="description-overview-content">
+                <h3 class="name-telescope">Gskyer Telescope, 70mm Aperture 400mm AZ Mount Astronomical Refracting
+                    Telescope for Kids Beginners
+                    - Travel Telescope with Carry Bag, Phone Adapter and Wireless Remote.</h3>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+                <div class="summary-overview">
+                    <li>Superior Optics: 400mm(f/5.7) focal length and 70mm aperture, fully coated optics glass lens
+                        with high transmission coatings creates stunning images and protect your eyes. Perfect full
+                        positive telescope for astronomers to explore stars and moon.</li>
+                    <li>Magnification: Come with two replaceable eyepieces and one 3x Barlow lens.3x Barlow lens trebles
+                        the magnifying power of each eyepiece. 5x24 finder scope with mounting bracket and cross-hair
+                        lines inside make locating objects easily.</li>
+                    <li>Wireless Remote: This refractor telescope includes one smart phone adapter and one Wireless
+                        camera remote to explore the nature of the world easily through the screen and take amazing
+                        celestial images.</li>
+                    <li>Adjustable Tripod: This telescope allows for many different viewing positions with a adjustable
+                        aluminum alloy tripod and a carry bag, the telescope and tripod can fit inside the bag for easy
+                        traveling and storage.</li>
+                    <li>Satisfaction: Buy with confidence from a leading manufacturer.</li>
+                </div>
+            </div>
+
+        </div>
+        <div class="add-cart-container">
+            <div class="img-cart-container">
+                <img src="{{url_for('static', filename='media/cart-icon.svg')}}" alt="refracting telescope Gskyer">
+            </div>
+            <button class="button-add-cart">Add to cart</button>
+        </div>
+    </section>
+</main>
+{% endblock %}
