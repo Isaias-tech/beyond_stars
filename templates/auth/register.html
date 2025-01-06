@@ -1,75 +1,63 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<title>Register - {{ app_name }}</title>
-<link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
-<link rel="stylesheet" href="{{url_for('static', filename='css/register.css')}}">
+Register - {{ app_name }}
 {% endblock title %}
 
+{% block statics %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/auth.css')}}">
+{% endblock statics %}
+
+{% block navigation %}
+<ul class="navbar">
+    <li><a href="/">Home</a></li>
+    <li><a href="/#available-products">Products</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#contact">Contact</a></li>
+    <div class="actions">
+        <a href="#">Register</a>
+		<a href="/auth/login">Login</a>
+    </div>
+</ul>
+{% endblock navigation %}
+
 {% block content %}
-<main>
-	<section style="background-image: url('{{ url_for('static', filename='media/background-app-official.jpg') }}');">
-		<a href="/">
-			<h1>{{app_name}}</h1>
-		</a>
-		<div class="image-container">
-			<img src="{{url_for('static', filename='media/logo.png')}}" alt="beyond-stars-logo">
+<main style="background-image: url('{{ url_for('static', filename='media/backgrounds/starry-night.webp') }}');">
+	<section>
+		<h2>Welcome to {{app_name}}!!</h2>
+		<div class="img-container">
+			<img src="{{url_for('static', filename='media/brand/space-man-brand.svg')}}" alt="beyond-stars-logo">
 		</div>
-		<p>The astronomy store where you’ll fine everything you need</p>
+		<p class="text-below">The astronomy store where you’ll fine everything you need</p>
 	</section>
 	<section>
-		<h2 class="join-us">Join and get all the astronomy staffs that you need in {{app_name}}</h2>
+		<h2 class="join-us">Join and get all the astronomy stuffs that you need in {{app_name}}</h2>
 		<form method="POST" action="/auth/register">
 			{{ form.hidden_tag() }}
 
 			<div>
 				<label for="first_name">First name:</label>
 				{{ form.first_name(class="form-control") }}
-				{% if form.first_name.errors %}
-				<div class="error">
-					{{ form.first_name.errors[0] }}
-				</div>
-				{% endif %}
 			</div>
 
 			<div>
 				<label for="last_name">Last name:</label>
 				{{ form.last_name(class="form-control") }}
-				{% if form.last_name.errors %}
-				<div class="error">
-					{{ form.last_name.errors[0] }}
-				</div>
-				{% endif %}
 			</div>
 
 			<div>
 				<label for="email">Email:</label>
 				{{ form.email(class="form-control") }}
-				{% if form.email.errors %}
-				<div class="error">
-					{{ form.email.errors[0] }}
-				</div>
-				{% endif %}
 			</div>
 
 			<div>
 				<label for="password">Password:</label>
 				{{ form.password(class="form-control") }}
-				{% if form.password.errors %}
-				<div class="error">
-					{{ form.password.errors[0] }}
-				</div>
-				{% endif %}
 			</div>
 
 			<div>
 				<label for="confirm_password">Confirm password:</label>
 				{{ form.confirm_password(class="form-control") }}
-				{% if form.confirm_password.errors %}
-				<div class="error">
-					{{ form.confirm_password.errors[0] }}
-				</div>
-				{% endif %}
 			</div>
 
 			{% with messages = get_flashed_messages(with_categories=true) %}

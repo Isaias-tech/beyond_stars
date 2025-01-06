@@ -1,69 +1,98 @@
 {% extends "layout.html" %}
 
 {% block title %}
-<title>Home - {{ app_name }}</title>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+Home - {{ app_name }}
 {% endblock title %}
 
-{% block content %}
-<header>
-    <nav>
-        <div class="brand">
-            <a href="#"><h1>{{app_name}}</h1></a>
-        </div>
-        <ul class="navbar">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/products">Products</a></li>
-            <li><a href="/contact">Contact</a></li>
-            <div class="actions">
-                <a href="/auth/register">Register</a>
-                <a href="/auth/login">Login</a>
-            </div>
-        </ul>
-    </nav>
-</header>
+{% block statics %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock statics %}
 
-<main>
-    <section id="home" style="background-image: url('{{ url_for('static', filename='media/galaxy-1.png') }}');">
+{% block content %}
+<main style="background-image: url('{{ url_for('static', filename='media/backgrounds/galaxy-1.webp') }}');">
+    <section id="home">
         <h2>Welcome to {{ app_name }}</h2>
         <p>Your one-stop shop for astronomy-related products!</p>
-        <img src="{{url_for('static', filename='media/logo.png')}}" alt="beyond-stars-logo" >
+        <div class="img-container">
+            <img src="{{url_for('static', filename='media/brand/space-man-brand.svg')}}" alt="beyond-stars-logo">
+        </div>
         <a href="/products" class="cta-button">Shop Now</a>
     </section>
-    
-    <section id="about">
-        <h2>About Us</h2>
-        <p>{{ app_name }} is dedicated to bringing the wonders of the cosmos to everyone. We offer high-quality telescopes, accessories, and gifts for astronomy enthusiasts.</p>
-        <p>Our mission is to make stargazing accessible and enjoyable for beginners and experts alike. Founded by passionate astronomers, we believe the night sky is for everyone to explore.</p>
+
+    <section id="statistics" style="background-image: url('{{ url_for('static', filename='media/backgrounds/space-divider-galaxy-1.svg') }}');" >
+        <div class="statistics-container">
+            <div class="stat">
+                <span>30K+</span>
+                <p>Clients</p>
+            </div>
+            <div class="stat">
+                <span>5K+</span>
+                <p>Producs</p>
+            </div>
+            <div class="stat">
+                <span>8+</span>
+                <p>Years</p>
+            </div>
+        </div>
     </section>
-    
-    <section id="products">
+
+
+    <section id="available-products">
         <h2>Our Products</h2>
         <p>Explore our selection of premium telescopes, star maps, and other stargazing essentials.</p>
-        <ul>
-            <li>High-quality telescopes for beginners and professionals.</li>
-            <li>Star maps to guide your celestial journeys.</li>
-            <li>Books and guides for astronomy enthusiasts.</li>
-            <li>Unique gifts for space lovers.</li>
-        </ul>
+
+        <div class="container-card-products">
+            {% for index in range(8) %}
+            <div class="card-container">
+                <h4 class="title-card">
+                    Refracting Telescope for Kids Beginners
+                </h4>
+                <div class="img-card-container">
+                    <img src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+                        alt="refracting telescope Gskyer">
+                </div>
+                <div class="texts">
+                    <h4 class="price-title">Original price:</h4>
+                    <h4 class="original-price">$429.99</h4>
+                    <h4 class="price-now">Now: $96.99</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <a href="/products" class="cta-button">View more</a>
     </section>
-    
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>{{ app_name }} is dedicated to bringing the wonders of the cosmos to everyone. We offer high-quality
+            telescopes, accessories, and gifts for astronomy enthusiasts.</p>
+        <p>Our mission is to make stargazing accessible and enjoyable for beginners and experts alike. Founded by
+            passionate astronomers, we believe the night sky is for everyone to explore.</p>
+    </section>
+
     <section id="contact">
         <h2>Contact Us</h2>
-        <form method="POST" action="/contact">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <h3>If you have any questions you can contact the {{app_name}} team.</h3>
+        <div class="contact-body">
+            <div class="img-container">
+                <img src="{{url_for('static', filename='media/brand/space-man-brand.svg')}}" alt="beyond-stars-logo">
+            </div>
+            <form method="POST" action="/contact">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
     
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
     
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
     
-            <button type="submit">Send Message</button>
-        </form>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
     </section>
+
+
 </main>
 
 <footer>

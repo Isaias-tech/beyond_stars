@@ -1,0 +1,65 @@
+{% extends "layout.html" %} {% block title %} Home - {{ app_name }} {% endblock
+title %} {% block statics %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/home.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/search-bar.css') }}"
+/>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/checkout.css')}}"
+/>
+{% endblock statics %} {% block navigation %}
+<ul class="navbar">
+  <form class="search-form" action="" method="post">
+    <input type="text" name="search" id="search" placeholder="Search here..." />
+    <button type="submit">
+      <div class="img-container">
+        <img
+          src="{{ url_for('static', filename='media/icons/search-icon.svg') }}"
+          alt="search-icon"
+        />
+      </div>
+    </button>
+  </form>
+  <div class="actions">
+    <a href="{{ url_for('auth.logout') }}">Logout</a>
+  </div>
+</ul>
+{% endblock navigation %} {% block content %}
+<main>
+  <section>
+    <div class="checkout-cards">
+      {% for i in range(3) %}
+
+      <div class="checkout-card">
+        <input type="checkbox" name="check-{{i}}" id="check-{{i}}" />
+        <div class="card-container-checkout">
+          <div class="img-container-checkout">
+            <img
+              src="{{url_for('static', filename='media/telescope-img/Gskyer-Telescope-refactor.jpg')}}"
+              alt="refracting telescope Gskyer"
+            />
+          </div>
+          <div class="details">
+            <h3 class="name-telescope">
+              Gskyer Telescope, 70mm Aperture 400mm AZ Mount Astronomical
+              Refracting Telescope for Kids Beginners - Travel Telescope with
+              Carry Bag, Phone Adapter and Wireless Remote.
+            </h3>
+            <div class="texts">
+              <h4 class="price-title">Original price:</h4>
+              <h4 class="original-price">$429.99</h4>
+              <h4 class="price-now">Now: $96.99</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</main>
+{% endblock %}
