@@ -15,3 +15,8 @@ def set_context():
 @login_required
 def home_page():
     return render_template("private/home.html")
+
+@private_bp.route("/profile")
+@login_required
+def profile_page():
+    return render_template("private/profile.html")
